@@ -23,6 +23,13 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
+```
+安装YCM：(前提必须联网，会需要更新第三方插件和编译)
+    
+    cd ~/.vim/bundle/YouCompleteMe
+    ./install.sh --clang-completer
+```
+
 I use `vim-plug` to manage my plugins, you can deactive unneeded ones by commenting `.nvimrc/.vimrc`.
 
 run `nvim/vim` then run `:PluginInstall`
