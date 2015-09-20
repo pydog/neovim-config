@@ -5,13 +5,22 @@ It's a new start
 ## HowTo
 
 ```
+for nvim
 git clone https://github.com/bigeagle/neovim-config.git
 ln -s path/to/neovim-config ~/.nvim
 ln -s ~/.nvim/nvimrc ~/.nvimrc
-git clone https://github.com/gmarik/Vundle.vim.git ~/.nvim/bundle/Vundle.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 pip install neovim
+
+or
+for vim
+ln -s path/to/neovim-config ~/.vim
+ln -s ~/.vim/nvimrc ~/.vimrc
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-I use `vundle` to manage my plugins, you can deactive unneeded ones by commenting `.nvimrc`.
+I use `vim-plug` to manage my plugins, you can deactive unneeded ones by commenting `.nvimrc/.vimrc`.
 
-run `nvim` then run `:PluginInstall` 
+run `nvim/vim` then run `:PluginInstall`
