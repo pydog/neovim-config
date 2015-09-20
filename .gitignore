@@ -1,3 +1,4 @@
 /bundle/
 /config/local.vim
 /.swapfiles
+*.pyc
