@@ -10,6 +10,13 @@ else:
     database = None
 
 flags = [
+    '-isystem',
+    '/usr/include',
+    '-isystem',
+    '/usr/include/c++/4.8',
+    '-isystem',
+    '/usr/include',
+    '/usr/include/x86_64-linux-gun/c++',
     '-Wall',
     '-std=c++11',
     '-stdlib=libc++',
