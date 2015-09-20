@@ -33,3 +33,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 I use `vim-plug` to manage my plugins, you can deactive unneeded ones by commenting `.nvimrc/.vimrc`.
 
 run `nvim/vim` then run `:PluginInstall`
+
+# QA
+```
+1、打开文件无法返回最后编辑的位置
+原因：`$HOME/.viminfo`文件的所有者不是当前用户
+```

@@ -72,14 +72,16 @@ filetype on
 filetype plugin on
 filetype indent on
 
-set list lcs=tab:\¦\
 
+augroup goback_exited_line
 if has("autocmd")  " go back to where you exited
+    "autocmd BufWritePost * mark"
     autocmd BufReadPost *
-        \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+        \ if line("'\"") > 1 && line ("'\"") <= line("$") |
         \   exe "normal g'\"" |
         \ endif
 endif
+augroup END
 
 set completeopt=longest,menu " preview
 
@@ -110,13 +112,14 @@ set backspace=indent,eol,start
 
 "show tab and space
 set list
-set listchars=tab:>-,trail:-
+set listchars=trail:-
+set list lcs=tab:\¦\
 
 "change tab to be space
 set shiftwidth=4
 set tabstop=4
 set expandtab
-augroup tab_space
+augroup tab_space_option
 if has("autocmd")
     "replace all tab to space
     autocmd BufWrite,BufRead *.c,*.cpp,*.java,*.h,*.sh,.vimrc if ! &bin | silent! :%retab! | endif
