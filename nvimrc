@@ -91,6 +91,7 @@ set completeopt=longest,menu " preview
 "    set nomousehide
 "endif
 
+let mapleader = ","
 set autoindent
 set modeline
 set cursorline
