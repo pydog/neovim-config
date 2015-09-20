@@ -31,12 +31,12 @@ else
     ln -s $HOME/.vim/tmuxrc/tmux.conf $HOME/.tmux.conf
 fi
 
-if [ -f $HOME/.bashrc ];then
-    echo ".bashrc exist, rename to .bashrc.bak"
-    mv $HOME/.bashrc $HOME/.bashrc.bak
-    ln -s $HOME/.vim/bashrc $HOME/.bashrc
+if [ -f $HOME/.bash_aliases ];then
+    echo ".bash_aliases exist, rename to .bash_aliases.bak"
+    mv $HOME/.bash_aliases $HOME/.bash_aliases.bak
+    ln -s $HOME/.vim/bash_aliases $HOME/.bash_aliases
 else
-    echo "install .bashrc"
-    ln -s $HOME/.vim/bashrc $HOME/.bashrc
+    echo "install .bash_aliases"
+    ln -s $HOME/.vim/bash_aliases $HOME/.bash_aliases
 fi
 
