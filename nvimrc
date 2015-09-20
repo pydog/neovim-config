@@ -1,4 +1,5 @@
 let g:python_host_prog='/usr/bin/python2.7'
+let g:python3_host_prog='/usr/bin/python3'
 
 set nocompatible
 filetype off
@@ -8,7 +9,6 @@ call plug#begin("~/.nvim/bundle")
 Plug 'rking/ag.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'Valloric/MatchTagAlways'
 Plug 'Valloric/YouCompleteMe', {'do': 'CXX=clang++ CC=clang ./install.sh --clang-completer --system-libclang --system-boost'}
 Plug 'jlanzarotta/bufexplorer'
 Plug 'bigeagle/molokai'
@@ -32,7 +32,7 @@ Plug 'lervag/vim-latex'
 Plug 'kchmck/vim-coffee-script'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax' 
+Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'tpope/vim-fugitive'
 Plug 'caio/querycommandcomplete.vim'
 Plug 'sudar/vim-arduino-syntax'
@@ -72,7 +72,7 @@ filetype on
 filetype plugin on
 filetype indent on
 
-set list lcs=tab:\¦\   
+set list lcs=tab:\¦\
 
 if has("autocmd")  " go back to where you exited
     autocmd BufReadPost *
@@ -83,26 +83,22 @@ endif
 
 set completeopt=longest,menu " preview
 
-if has('mouse')
-    set mouse=a
-    set selectmode=mouse,key
-    set nomousehide
-endif
+"if has('mouse')
+"    set mouse=a
+"    set selectmode=mouse,key
+"    set nomousehide
+"endif
 
 set autoindent
 set modeline
 set cursorline
 set cursorcolumn
 
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
-
 set showmatch
 set matchtime=0
 set nobackup
 set nowritebackup
-set directory=~/.nvim/.swapfiles//
+"set directory=~/.nvim/.swapfiles//
 
 if has('nvim')
    set ttimeout
@@ -111,6 +107,25 @@ endif
 
 "在insert模式下能用删除键进行删除
 set backspace=indent,eol,start
+
+"show tab and space
+set list
+set listchars=tab:>-,trail:-
+
+"change tab to be space
+set shiftwidth=4
+set tabstop=4
+set expandtab
+augroup tab_space
+if has("autocmd")
+    "replace all tab to space
+    autocmd BufWrite,BufRead *.c,*.cpp,*.java,*.h,*.sh,.vimrc if ! &bin | silent! :%retab! | endif
+    "auto remove the space at the end of line
+    autocmd BufWrite,BufRead *.c,*.cpp,*.java,*.h,*.sh,.vimrc if ! &bin | silent! :%s/\s\+$// | endif
+    "auto remove space of the beginning
+    autocmd BufWrite,BufRead *.c,*.cpp,*.java,*.h,*.sh,.vimrc if ! &bin | silent! %s/\r//g | endif
+endif
+augroup END
 
 set fenc=utf-8
 set fencs=utf-8,gbk,gb18030,gb2312,cp936,usc-bom,euc-jp
@@ -190,5 +205,6 @@ source ~/.nvim/config/vim-notes.vim
 
 " Load local config if exists
 if filereadable(expand("~/.nvim/config/local.vim"))
-	source ~/.nvim/config/local.vim
+    source ~/.nvim/config/local.vim
 endif
+
