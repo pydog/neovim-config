@@ -10,6 +10,7 @@ Plug 'rking/ag.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'Valloric/YouCompleteMe', {'do': 'CXX=clang++ CC=clang ./install.sh --clang-completer --system-libclang --system-boost'}
+Plug 'rdnetto/YCM-Generator',{'branch':'stable'}
 Plug 'jlanzarotta/bufexplorer'
 Plug 'bigeagle/molokai'
 Plug 'bling/vim-airline'
