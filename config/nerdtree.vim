@@ -2,6 +2,7 @@
 nnoremap <silent> <F4> :NERDTree<CR>
 let NERDTreeShowBookmarks=0
 let NERDTreeMouseMode=2
+let NERDTreeQuitOnOpen=1
 
 " let g:nerdtree_tabs_focus_on_files=1
 " let g:nerdtree_tabs_open_on_gui_startup=0
