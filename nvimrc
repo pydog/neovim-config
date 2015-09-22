@@ -4,7 +4,7 @@ let g:python3_host_prog='/usr/bin/python3'
 set nocompatible
 filetype off
 
-call plug#begin("~/.nvim/bundle")
+call plug#begin("~/.vim/bundle")
 " Plugin List
 Plug 'rking/ag.vim'
 Plug 'kien/ctrlp.vim'
@@ -46,7 +46,7 @@ Plug 'freitass/todo.txt-vim'
 Plug 'xolox/vim-misc' | Plug 'xolox/vim-notes'
 Plug 'justinmk/vim-gtfo'
 
-Plug '~/.nvim/bundle/colorpicker'
+Plug '~/.vim/bundle/colorpicker'
 call plug#end()
 
 " UI
@@ -71,6 +71,7 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
+set t_Co=256
 
 
 augroup goback_exited_line
@@ -101,9 +102,9 @@ set showmatch
 set matchtime=0
 set nobackup
 set nowritebackup
-"set directory=~/.nvim/.swapfiles//
+"set directory=~/.vim/.swapfiles//
 
-if has('nvim')
+if has('vim')
    set ttimeout
    set ttimeoutlen=0
 endif
@@ -189,26 +190,26 @@ function ScriptHeader()
 endfunction
 
 
-source ~/.nvim/config/airline.vim
-source ~/.nvim/config/python-mode.vim
-source ~/.nvim/config/tagbar.vim
-source ~/.nvim/config/nerdtree.vim
-source ~/.nvim/config/cscope.vim
-source ~/.nvim/config/syntastic.vim
-source ~/.nvim/config/ycm.vim
-source ~/.nvim/config/ultisnips.vim
-source ~/.nvim/config/rainbow_brackets.vim
-source ~/.nvim/config/latex.vim
-source ~/.nvim/config/vim-go.vim
-source ~/.nvim/config/pandoc.vim
-source ~/.nvim/config/scss.vim
-source ~/.nvim/config/querycommand.vim
-source ~/.nvim/config/localvimrc.vim
-source ~/.nvim/config/ctrlp.vim
-source ~/.nvim/config/vim-notes.vim
+source ~/.vim/config/airline.vim
+source ~/.vim/config/python-mode.vim
+source ~/.vim/config/tagbar.vim
+source ~/.vim/config/nerdtree.vim
+source ~/.vim/config/cscope.vim
+source ~/.vim/config/syntastic.vim
+source ~/.vim/config/ycm.vim
+source ~/.vim/config/ultisnips.vim
+source ~/.vim/config/rainbow_brackets.vim
+source ~/.vim/config/latex.vim
+source ~/.vim/config/vim-go.vim
+source ~/.vim/config/pandoc.vim
+source ~/.vim/config/scss.vim
+source ~/.vim/config/querycommand.vim
+source ~/.vim/config/localvimrc.vim
+source ~/.vim/config/ctrlp.vim
+source ~/.vim/config/vim-notes.vim
 
 " Load local config if exists
-if filereadable(expand("~/.nvim/config/local.vim"))
-    source ~/.nvim/config/local.vim
+if filereadable(expand("~/.vim/config/local.vim"))
+    source ~/.vim/config/local.vim
 endif
 
