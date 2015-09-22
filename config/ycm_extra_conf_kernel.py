@@ -37,15 +37,9 @@ import ycm_core
 flags = [
 '-Wall',
 '-Wextra',
-'-Wno-long-long',
-'-Wno-variadic-macros',
-'-fexceptions',
-'-fno-rtti',
-'-fno-strict-aliasing',
-'-fPIE',
-'-fpic',
-'-DNDEBUG',
-'-DANDROID',
+'-Wc++98-compat',
+'-D__KERNEL__',
+'-nostdinc',
 #'-march=armv7-a',
 '-DUSE_CLANG_COMPLETER',
 # THIS IS IMPORTANT! Without a "-std=<something>" flag, clang won't know which
@@ -54,36 +48,21 @@ flags = [
 # a "-std=<something>".
 # For a C project, you would set this to something like 'c99' instead of
 # 'c++11'.
-'-std=c++11',
+'-std=c99',
 # ...and the same thing goes for the magic -x option which specifies the
 # language that the files to be compiled are written in. This is mostly
 # relevant for c++ headers.
 # For a C project, you would set this to 'c' instead of 'c++'.
-'-x', 'c++',
+'-x', 'c',
 '-I', '.'
 ]
 
 includedirs = [
-'system/core/include',
-'hardware/libhardware/include',
-'hardware/libhardware_legacy/include',
-'hardware/ril/include',
-'libnativehelper/include',
-'bionic/libc/arch-arm/include',
-'bionic/libc/include',
-'bionic/libc/kernel/common',
-'bionic/libc/kernel/arch-arm',
-'bionic/libstdc++/include',
-'bionic/libstdc++/include',
-'bionic/libm/include',
-'bionic/libm/include/arm',
-'bionic/libthread_db/include',
-'frameworks/native/include',
-'frameworks/native/opengl/include',
-'frameworks/av/include',
-'frameworks/base/include',
-'kernel/include/uapi' 
-#Add more header locations that you're interested in
+'include',
+'include/linux',
+'include/asm-generic',
+'arch/arm/include',
+'arch/arm64/include', #Add include paths for the architecures you're interested in.
 ]
 
 def GetRoot(filename, marker_dir):
@@ -96,10 +75,12 @@ def GetRoot(filename, marker_dir):
         path = os.path.dirname(path)
 
 def AppendIncludes(filename):
-    root = GetRoot(filename, ".repo")
+    kernelroot = GetRoot(filename, "Kbuild")
     for includedir in includedirs:
         flags.append('-isystem')
-        flags.append(os.path.join(root, includedir))
+        flags.append(os.path.join(kernelroot, includedir))
+    flags.append('-I')
+    flags.append(os.path.dirname(os.path.abspath(filename)))
 
 # Set this to the absolute path to the folder (NOT the file!) containing the
 # compile_commands.json file to use that instead of 'flags'. See here for
@@ -114,8 +95,10 @@ if compilation_database_folder:
 else:
   database = None
 
+
 def DirectoryOfThisScript():
   return os.path.dirname( os.path.abspath( __file__ ) )
+
 
 def MakeRelativePathsInFlagsAbsolute( flags, working_directory ):
   if not working_directory:
