@@ -210,6 +210,7 @@ source ~/.vim/config/querycommand.vim
 source ~/.vim/config/localvimrc.vim
 source ~/.vim/config/ctrlp.vim
 source ~/.vim/config/vim-notes.vim
+source ~/.vim/config/undotree.vim
 
 " Load local config if exists
 if filereadable(expand("~/.vim/config/local.vim"))
