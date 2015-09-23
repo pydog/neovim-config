@@ -161,6 +161,8 @@ nmap j gj
 nmap k gk
 
 nmap T :tabnew<cr>
+nmap <C-h> :vertical res-10<cr>
+nmap <C-l> :vertical res+10<cr>
 
 au FileType c,cpp,h,java,css,js,nginx,scala,go inoremap  <buffer>  {<CR> {<CR>}<Esc>O
 
