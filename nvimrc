@@ -8,10 +8,9 @@ call plug#begin("~/.vim/bundle")
 " Plugin List
 Plug 'rking/ag.vim'
 Plug 'kien/ctrlp.vim'
-Plug 'Yggdroot/indentLine'
+"Plug 'Yggdroot/indentLine'
 Plug 'Valloric/YouCompleteMe', {'do': 'CXX=clang++ CC=clang ./install.sh --clang-completer --system-libclang --system-boost'}
 Plug 'rdnetto/YCM-Generator',{'branch':'stable'}
-Plug 'jlanzarotta/bufexplorer'
 Plug 'bigeagle/molokai'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdtree'
@@ -20,34 +19,12 @@ Plug 'scrooloose/syntastic'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'majutsushi/tagbar'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'embear/vim-localvimrc'
 Plug 'jrosiek/vim-mark'
 Plug 'mbbill/undotree'
 Plug 'kien/rainbow_parentheses.vim'
 
-Plug 'mattn/emmet-vim'
-Plug 'hdima/python-syntax'
-Plug 'hynek/vim-python-pep8-indent'
-Plug 'fatih/vim-go'
-Plug 'lervag/vim-latex'
-Plug 'kchmck/vim-coffee-script'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'tpope/vim-fugitive'
-Plug 'caio/querycommandcomplete.vim'
-Plug 'sudar/vim-arduino-syntax'
 Plug 'zaiste/tmux.vim'
-Plug 'lepture/vim-jinja'
-Plug 'cespare/vim-toml'
-Plug 'mxw/vim-jsx'
-Plug 'isRuslan/vim-es6'
-
-Plug 'freitass/todo.txt-vim'
-Plug 'xolox/vim-misc' | Plug 'xolox/vim-notes'
-Plug 'justinmk/vim-gtfo'
-
-Plug '~/.vim/bundle/colorpicker'
 call plug#end()
 
 " UI
@@ -194,7 +171,6 @@ endfunction
 
 
 source ~/.vim/config/airline.vim
-source ~/.vim/config/python-mode.vim
 source ~/.vim/config/tagbar.vim
 source ~/.vim/config/nerdtree.vim
 source ~/.vim/config/cscope.vim
@@ -202,14 +178,7 @@ source ~/.vim/config/syntastic.vim
 source ~/.vim/config/ycm.vim
 source ~/.vim/config/ultisnips.vim
 source ~/.vim/config/rainbow_brackets.vim
-source ~/.vim/config/latex.vim
-source ~/.vim/config/vim-go.vim
-source ~/.vim/config/pandoc.vim
-source ~/.vim/config/scss.vim
-source ~/.vim/config/querycommand.vim
-source ~/.vim/config/localvimrc.vim
 source ~/.vim/config/ctrlp.vim
-source ~/.vim/config/vim-notes.vim
 source ~/.vim/config/undotree.vim
 
 " Load local config if exists
