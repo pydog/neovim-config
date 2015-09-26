@@ -38,4 +38,7 @@ run `nvim/vim` then run `:PluginInstall`
 ```
 1、打开文件无法返回最后编辑的位置
 原因：`$HOME/.viminfo`文件的所有者不是当前用户
+
+2、YCM android不自动补全
+原因：`Android源代码的根目录必须有.repo目录，YCM的配置文件添加的头文件相对于.repo所在目录`
 ```
