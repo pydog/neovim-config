@@ -11,6 +11,7 @@ let NERDTreeWinSize=25
 let NERDTreeIgnore = ['\.pyc$']
 let NERDTreeMinimalUI=0
 let NERDTreeDirArrows=1
+let NERDTreeWinPos="right"
 
 "let g:newrw_ftp_cmd = 'lftp'
 let g:netrw_altv          = 1
