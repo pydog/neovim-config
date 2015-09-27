@@ -27,6 +27,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'zaiste/tmux.vim'
 
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'abudden/taghighlight-automirror'
 
 call plug#end()
 
