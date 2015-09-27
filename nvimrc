@@ -25,6 +25,9 @@ Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'zaiste/tmux.vim'
+
+Plug 'octol/vim-cpp-enhanced-highlight'
+
 call plug#end()
 
 " UI
@@ -50,7 +53,7 @@ filetype on
 filetype plugin on
 filetype indent on
 set t_Co=256
-
+set hls
 
 augroup goback_exited_line
 if has("autocmd")  " go back to where you exited
@@ -128,7 +131,6 @@ vnoremap <Space> zf
 
 set smartcase
 set ignorecase
-set nohlsearch
 set incsearch
 set autochdir
 
@@ -180,6 +182,7 @@ source ~/.vim/config/ultisnips.vim
 source ~/.vim/config/rainbow_brackets.vim
 source ~/.vim/config/ctrlp.vim
 source ~/.vim/config/undotree.vim
+source ~/.vim/config/vim-cpp-enhanced-highlight.vim
 
 " Load local config if exists
 if filereadable(expand("~/.vim/config/local.vim"))
