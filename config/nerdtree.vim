@@ -1,5 +1,5 @@
 "nmap nt :NERDTreeToggle<cr>
-nnoremap <silent> <F4> :NERDTree<CR>
+nnoremap <silent> <F5> :NERDTree<CR>
 let NERDTreeShowBookmarks=0
 let NERDTreeMouseMode=2
 let NERDTreeQuitOnOpen=1

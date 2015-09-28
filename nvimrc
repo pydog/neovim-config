@@ -7,7 +7,7 @@ filetype off
 call plug#begin("~/.vim/bundle")
 " Plugin List
 Plug 'rking/ag.vim'
-Plug 'kien/ctrlp.vim'
+"Plug 'kien/ctrlp.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'Valloric/YouCompleteMe', {'do': 'CXX=clang++ CC=clang ./install.sh --clang-completer --system-libclang --system-boost'}
 Plug 'rdnetto/YCM-Generator',{'branch':'stable'}
@@ -27,7 +27,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'zaiste/tmux.vim'
 
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'abudden/taghighlight-automirror'
+Plug 'xolox/vim-misc' "easytags needed
+Plug 'xolox/vim-easytags'
+
+Plug 'Shougo/neomru.vim'
+Plug 'Shougo/unite.vim'
 
 call plug#end()
 
@@ -181,9 +185,11 @@ source ~/.vim/config/syntastic.vim
 source ~/.vim/config/ycm.vim
 source ~/.vim/config/ultisnips.vim
 source ~/.vim/config/rainbow_brackets.vim
-source ~/.vim/config/ctrlp.vim
+"source ~/.vim/config/ctrlp.vim
 source ~/.vim/config/undotree.vim
 source ~/.vim/config/vim-cpp-enhanced-highlight.vim
+source ~/.vim/config/easytags.vim
+source ~/.vim/config/unite.vim
 
 " Load local config if exists
 if filereadable(expand("~/.vim/config/local.vim"))
