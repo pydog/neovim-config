@@ -13,7 +13,7 @@ Plug 'Valloric/YouCompleteMe', {'do': 'CXX=clang++ CC=clang ./install.sh --clang
 Plug 'rdnetto/YCM-Generator',{'branch':'stable'}
 Plug 'bigeagle/molokai'
 Plug 'bling/vim-airline'
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 
 Plug 'terryma/vim-multiple-cursors'
@@ -32,6 +32,7 @@ Plug 'xolox/vim-easytags'
 
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimfiler.vim'
 
 call plug#end()
 
@@ -137,7 +138,7 @@ vnoremap <Space> zf
 set smartcase
 set ignorecase
 set incsearch
-set autochdir
+"set autochdir "vimfiler need closed
 
 vmap j gj
 vmap k gk
@@ -179,7 +180,7 @@ endfunction
 
 source ~/.vim/config/airline.vim
 source ~/.vim/config/tagbar.vim
-source ~/.vim/config/nerdtree.vim
+"source ~/.vim/config/nerdtree.vim
 source ~/.vim/config/cscope.vim
 source ~/.vim/config/syntastic.vim
 source ~/.vim/config/ycm.vim
@@ -190,6 +191,7 @@ source ~/.vim/config/undotree.vim
 source ~/.vim/config/vim-cpp-enhanced-highlight.vim
 source ~/.vim/config/easytags.vim
 source ~/.vim/config/unite.vim
+source ~/.vim/config/vimfiler.vim
 
 " Load local config if exists
 if filereadable(expand("~/.vim/config/local.vim"))
