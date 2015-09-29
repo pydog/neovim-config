@@ -17,7 +17,7 @@ Plug 'bling/vim-airline'
 Plug 'scrooloose/syntastic'
 
 Plug 'terryma/vim-multiple-cursors'
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'jrosiek/vim-mark'
 Plug 'mbbill/undotree'
@@ -33,6 +33,8 @@ Plug 'xolox/vim-easytags'
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/unite-outline'
+Plug 'Shougo/vimproc.vim'
 
 call plug#end()
 
@@ -179,7 +181,7 @@ endfunction
 
 
 source ~/.vim/config/airline.vim
-source ~/.vim/config/tagbar.vim
+"source ~/.vim/config/tagbar.vim
 "source ~/.vim/config/nerdtree.vim
 source ~/.vim/config/cscope.vim
 source ~/.vim/config/syntastic.vim
@@ -192,6 +194,7 @@ source ~/.vim/config/vim-cpp-enhanced-highlight.vim
 source ~/.vim/config/easytags.vim
 source ~/.vim/config/unite.vim
 source ~/.vim/config/vimfiler.vim
+source ~/.vim/config/unite-outline.vim
 
 " Load local config if exists
 if filereadable(expand("~/.vim/config/local.vim"))
