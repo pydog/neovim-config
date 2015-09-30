@@ -193,8 +193,6 @@ source ~/.vim/config/undotree.vim
 source ~/.vim/config/vim-cpp-enhanced-highlight.vim
 source ~/.vim/config/easytags.vim
 source ~/.vim/config/unite.vim
-source ~/.vim/config/vimfiler.vim
-source ~/.vim/config/unite-outline.vim
 
 " Load local config if exists
 if filereadable(expand("~/.vim/config/local.vim"))

@@ -13,8 +13,15 @@ let g:unite_source_grep_default_opts='--nocolor --nogroup -S -C4'
 let g:unite_source_grep_recursive_opt=''
 endif
 
-nnoremap <silent> <c-p> :Unite -auto-resize file_mru file<cr>
-nnoremap <Leader>b :Unite -quick-match buffer<cr>
+nnoremap <silent> <F4> :Unite outline<CR>
+nnoremap <silent> <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+
+nnoremap <silent> <leader>b :<C-u>Unite -no-split -buffer-name=buffer -start-insert buffer<cr>
+nnoremap <silent> <leader>g :<C-u>Unite -no-split -buffer-name=grep grep:.<cr>
+nnoremap <silent> <c-p> :Unite -no-split -buffer-name=files file_mru file<cr>
+
+nnoremap <silent> <F5> :VimFiler<CR>
+nnoremap <silent> <leader>f :VimFiler<cr>
 
 " Custom mappings for the unite buffer
 autocmd FileType unite call s:unite_settings()
