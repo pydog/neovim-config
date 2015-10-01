@@ -38,6 +38,8 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 Plug 'dyng/ctrlsf.vim'
 
+Plug 'scrooloose/nerdcommenter'
+
 call plug#end()
 
 " UI
@@ -127,6 +129,7 @@ if executable('ag')
     let g:ackprg = 'ag --nogroup --nocolor --column --cc --cpp --java'
 endif
 
+nnoremap <leader>q :qa!<CR>
 set fenc=utf-8
 set fencs=utf-8,gbk,gb18030,gb2312,cp936,usc-bom,euc-jp
 set enc=utf-8
@@ -141,7 +144,6 @@ set foldlevel=100
 " 用空格键来开关折叠
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 vnoremap <Space> zf
-
 
 set smartcase
 set ignorecase
@@ -189,8 +191,8 @@ endfunction
 source ~/.vim/config/airline.vim
 "source ~/.vim/config/tagbar.vim
 "source ~/.vim/config/nerdtree.vim
-source ~/.vim/config/cscope.vim
-source ~/.vim/config/syntastic.vim
+"source ~/.vim/config/cscope.vim
+"source ~/.vim/config/syntastic.vim
 source ~/.vim/config/ycm.vim
 source ~/.vim/config/ultisnips.vim
 source ~/.vim/config/rainbow_brackets.vim
