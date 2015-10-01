@@ -14,7 +14,7 @@ Plug 'rdnetto/YCM-Generator',{'branch':'stable'}
 Plug 'bigeagle/molokai'
 Plug 'bling/vim-airline'
 "Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 
 Plug 'terryma/vim-multiple-cursors'
 "Plug 'majutsushi/tagbar'
@@ -34,7 +34,9 @@ Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/unite-outline'
-Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+
+Plug 'dyng/ctrlsf.vim'
 
 call plug#end()
 
@@ -121,6 +123,10 @@ if has("autocmd")
 endif
 augroup END
 
+if executable('ag')
+    let g:ackprg = 'ag --nogroup --nocolor --column --cc --cpp --java'
+endif
+
 set fenc=utf-8
 set fencs=utf-8,gbk,gb18030,gb2312,cp936,usc-bom,euc-jp
 set enc=utf-8
@@ -193,6 +199,7 @@ source ~/.vim/config/undotree.vim
 source ~/.vim/config/vim-cpp-enhanced-highlight.vim
 source ~/.vim/config/easytags.vim
 source ~/.vim/config/unite.vim
+source ~/.vim/config/ctrlsf.vim
 
 " Load local config if exists
 if filereadable(expand("~/.vim/config/local.vim"))
