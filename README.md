@@ -41,4 +41,7 @@ run `nvim/vim` then run `:PluginInstall`
 
 2、YCM android不自动补全
 原因：`Android源代码的根目录必须有.repo目录，YCM的配置文件添加的头文件相对于.repo所在目录`
+
+3、unite
+原因：`安装ag sudo apt-get install silversearcher-ag`
 ```
