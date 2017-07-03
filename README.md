@@ -8,7 +8,7 @@ fork from: `git@github.com:bigeagle/neovim-config.git`
 
 ```
 for nvim
-git clone https://github.com/bigeagle/neovim-config.git
+git clone url_my_vim_config
 ln -s path/to/neovim-config ~/.nvim
 ln -s ~/.nvim/nvimrc ~/.nvimrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
