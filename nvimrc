@@ -4,15 +4,31 @@ let g:python3_host_prog='/usr/bin/python3'
 set nocompatible
 filetype off
 
+if has("win16") || has("win32") || has("win64") || has("win95")
+    let g:simpleconfig = 1
+elseif has("unix")
+  let s:uname = system("uname -s")
+  " don't know how to judge the string is null or not  
+  if strlen(matchstr(s:uname, "CYGWIN_NT"))
+      let g:simpleconfig = 1
+  else
+      let g:simpleconfig = 0
+  endif
+endif
+
 call plug#begin("~/.vim/bundle")
 " Plugin List
 Plug 'rking/ag.vim'
 "Plug 'kien/ctrlp.vim'
 Plug 'Yggdroot/indentLine'
+
+if !g:simpleconfig
 Plug 'Valloric/YouCompleteMe', {'do': 'CXX=clang++ CC=clang ./install.sh --clang-completer --system-libclang --system-boost'}
 Plug 'rdnetto/YCM-Generator',{'branch':'stable'}
-Plug 'bigeagle/molokai'
+endif
+Plug 'vim-airline/vim-airline-themes'
 Plug 'bling/vim-airline'
+Plug 'tomasr/molokai'
 "Plug 'scrooloose/nerdtree'
 "Plug 'scrooloose/syntastic'
 
