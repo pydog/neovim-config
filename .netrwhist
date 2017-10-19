@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/junxinw/.tmux'
 let g:netrw_dirhist_2='/home/junxinw'
 let g:netrw_dirhist_3='/home/junxinw/neovim-config/tmuxrc'
+let g:netrw_dirhist_4='/home/junxinw/repo.git/refs'

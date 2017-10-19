@@ -8,7 +8,7 @@ if has("win16") || has("win32") || has("win64") || has("win95")
     let g:simpleconfig = 1
 elseif has("unix")
   let s:uname = system("uname -s")
-  " don't know how to judge the string is null or not  
+  " don't know how to judge the string is null or not
   if strlen(matchstr(s:uname, "CYGWIN_NT"))
       let g:simpleconfig = 1
   else
@@ -124,7 +124,7 @@ set backspace=indent,eol,start
 "show tab and space
 set list
 set listchars=trail:-
-set list lcs=tab:\¦\
+"set list lcs=tab:\¦\:
 
 "change tab to be space
 set shiftwidth=4
